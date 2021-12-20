@@ -8,16 +8,16 @@
 
 int check_cycle(listint_t *list)
 {
-    listint_t *start = list, *search = list;
+	listint_t *start = list, *search = list;
 
-    while (search && search->next)
-    {
-        while (start != search && start != search->next)
-            start = start->next;
-        if (start == search->next)
+	while (search && search->next)
+	{
+		while (start != search && start != search->next)
+			start = start->next;
+		if (start == search->next)
 			return (1);
-        search = search->next;
-        start = list;
-    }
-    return (0);
+		search = search->next;
+		start = list;
+	}
+	return (0);
 }
