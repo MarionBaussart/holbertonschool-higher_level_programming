@@ -8,16 +8,14 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *start = list, *search = list;
+	listint_t *hare = list->next, *turtle = list;
 
-	while (search && search->next)
+	while (hare && hare->next && turtle)
 	{
-		while (start != search && start != search->next)
-			start = start->next;
-		if (start == search->next)
+		if (hare == turtle)
 			return (1);
-		search = search->next;
-		start = list;
+		hare = hare->next->next;
+		turtle = turtle->next;
 	}
 	return (0);
 }
