@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 for alphabet in range(ord('a'), ord('z') + 1):
-	if chr(alphabet) != 'e' and chr(alphabet) != 'q':
-		print("{:c}".format(alphabet), end="")
+    if chr(alphabet) != 'e' and chr(alphabet) != 'q':
+        print("{:c}".format(alphabet), end="")
