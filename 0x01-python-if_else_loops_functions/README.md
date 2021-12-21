@@ -161,3 +161,6 @@ Write a function that creates a copy of the string, removing the character at th
 * You are not allowed to import any module
 
 You don’t need to understand __import__
+
+## 16. ByteCode -> Python #2
+Write the Python function def magic_calculation(a, b, c): that does exactly the same Python bytecode
