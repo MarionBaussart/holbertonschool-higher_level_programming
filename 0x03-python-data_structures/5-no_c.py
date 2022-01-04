@@ -5,7 +5,5 @@ function that removes all characters c and C from a string
 
 
 def no_c(my_string):
-    characters = "cC"
-    for char in range(len(characters)):
-        my_string = my_string.replace(characters[char],"")
+    my_string = my_string.translate({ord(char): None for char in 'cC'})
     return (my_string)
