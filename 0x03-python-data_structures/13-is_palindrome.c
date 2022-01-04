@@ -10,6 +10,9 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *reversed, *current;
 
+	if (*head == NULL)
+		return (1);
+
 	reversed = reverse_listint(&reversed);
 	current = *head;
 
