@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 a = 89
 b = 10
-tampon = a ; a = b ; b = tampon
+a, b = b, a
 print("a={:d} - b={:d}".format(a, b))
