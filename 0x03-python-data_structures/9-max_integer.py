@@ -13,4 +13,3 @@ def max_integer(my_list=[]):
             if integer > integer_max:
                 integer_max = integer
         return (integer_max)
- 
