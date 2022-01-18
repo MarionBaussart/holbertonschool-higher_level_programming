@@ -13,8 +13,8 @@ class Square:
         @size: private instance attribute, size of the square
         @position: private instance attribute, position to print the square
         """
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -75,10 +75,10 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
+            for i in range(self.position[1]):
                 print()
             for i in range(self.__size):
-                for j in range(self.__position[0]):
+                for j in range(self.position[0]):
                     print(" ", end="")
                 for k in range(self.__size):
                     print("#", end="")
