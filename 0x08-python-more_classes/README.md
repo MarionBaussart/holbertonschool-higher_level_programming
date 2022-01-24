@@ -66,3 +66,11 @@ Write a class Rectangle that defines a rectangle by: (based on 5-rectangle.py)
     * Initialized to 0
     * Incremented during each new instance instantiation
     * Decremented during each instance deletion
+
+## 7. Change representation
+Write a class Rectangle that defines a rectangle by: (based on 6-rectangle.py)
+
+* Public class attribute print_symbol:
+    * Initialized to #
+    * Used as symbol for string representation
+    * Can be any type
