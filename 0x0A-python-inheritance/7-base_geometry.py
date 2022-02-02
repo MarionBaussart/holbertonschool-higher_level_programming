@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 class BaseGeometry:
     """ class BaseGeometry """
-    
+
     def area(self):
         """
         Public instance method
@@ -23,7 +23,7 @@ class BaseGeometry:
         Raise:
             TypeError: <name> must be an integer
             ValueError: <name> must be greater than 0
-        """      
+        """
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
         elif value <= 0:
