@@ -45,4 +45,4 @@ class Student:
             json: dictionary containing the new attributes
         """
         for attribute in json:
-            all_dictionary[attribute] = json[attribute]
+            self.__dict__[attribute] = json[attribute]
