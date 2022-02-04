@@ -24,7 +24,7 @@ class Student:
         Args:
             self: first argument to instance methods
             attrs: list of attribute wanted
-        Return: the attribute contained in attrs, if none return all
+        Return: the attribute contained in attrs, otherwise return all
         """
         all_dictionary = self.__dict__
         dictionary = {}
@@ -37,3 +37,12 @@ class Student:
 
         else:
             return all_dictionary
+
+    def reload_from_json(self, json):
+        """ Public method that replaces all attributes of the Student instance
+        Args:
+            self: first argument to instance methods
+            json: dictionary containing the new attributes
+        """
+        for attribute in json:
+            all_dictionary[attribute] = json[attribute]
