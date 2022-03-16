@@ -4,6 +4,6 @@
 -- You can use only one SELECT statement
 SELECT cities.id, cities.name, states.name
 FROM cities
-FULL JOIN states
+JOIN states
 ON states.id = cities.state_id
 ORDER BY cities.id ASC;
