@@ -5,7 +5,9 @@ module containing class Base
 
 
 class Base:
-    """ Base class """
+    """ Base class
+    private class attribute __nb_objects
+    """
 
     __nb_objects = 0
 
