@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module containing class Base
+module containing class Rectangle
 """
 from models.base import Base
 
