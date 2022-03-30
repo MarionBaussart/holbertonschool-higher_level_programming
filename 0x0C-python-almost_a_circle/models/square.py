@@ -46,3 +46,26 @@ class Square(Rectangle):
         """
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x,
                 self.y, self.width))
+
+    def update(self, *args, **kwargs):
+        """
+        Public instance method : assigns a key/value argument to attributes
+        Args:
+            self: first argument to instance methods
+            *args: list of arguments - no-keyworded arguments
+            **kwargs: double pointer to a dictionary: key/value
+            (keyworded arguments)
+        """
+        if args is not None and len(args) > 0:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+                self.height = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
