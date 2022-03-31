@@ -51,5 +51,5 @@ class Base:
         list_json = cls.to_json_string(list_dict)
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode="w") as file:
-                file.write(list_json)
+            file.write(list_json)
 
