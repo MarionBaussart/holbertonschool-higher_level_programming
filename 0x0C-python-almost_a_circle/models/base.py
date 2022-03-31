@@ -32,7 +32,7 @@ class Base:
         Return: JSON string representation of list_dictionaries
         """
         json_dict = "[]"
-        if list_dictionaries is not None and list_dictionaries is not [] :
+        if list_dictionaries is not None and list_dictionaries is not []:
             json_dict = json.dumps(list_dictionaries)
         return json_dict
 
@@ -43,10 +43,10 @@ class Base:
             cls: first argument to class methods
             list_objs: list of instances who inherits of Base
         """
-        json_dict = cls.__name__.to_json_string(list_objs)
+        list_dict = []
+        for obj in list_objs:
+            list_dict.append(obj.to_dictionary())
+
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode="w") as file:
-            if list_objs is None:
-                json.dump([], file)
-            else:
-                json.dump(json_dict, file)
+            json.dump(list_dict, file)
