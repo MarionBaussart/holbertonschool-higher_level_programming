@@ -32,7 +32,7 @@ class Base:
         Return: JSON string representation of list_dictionaries
         """
         json_dict = "[]"
-        if list_dictionaries is not None or list_dictionaries is not []:
+        if list_dictionaries is not None and list_dictionaries is not [] :
             json_dict = json.dumps(list_dictionaries)
         return json_dict
 
