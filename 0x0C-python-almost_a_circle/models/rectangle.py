@@ -149,4 +149,6 @@ class Rectangle(Base):
             self: first argument to instance methods
         Return: dictionary
         """
-        return self.__dict__
+        dictionary = {'x': self.__x, 'y': self.__y, 'id': self.id,
+                      'height': self.__height, 'width': self.__width}
+        return dictionary
