@@ -24,6 +24,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ Serialize obj to a JSON formatted str
         Args:
@@ -34,3 +35,18 @@ class Base:
         if list_dictionaries is not None or list_dictionaries is not []:
             json_dict = json.dumps(list_dictionaries)
         return json_dict
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ writes the JSON string representation of list_objs to a file
+        Args:
+            cls: first argument to class methods
+            list_objs: list of instances who inherits of Base
+        """
+        json_dict = cls.__name__.to_json_string(list_objs)
+        filename = "{}.json".format(cls.__name__)
+        with open(filename, mode="w") as file:
+            if list_objs is None:
+                json.dump([], file)
+            else:
+                json.dump(json_dict, file)
