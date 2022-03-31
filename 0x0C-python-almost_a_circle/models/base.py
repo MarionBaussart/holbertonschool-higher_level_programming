@@ -44,13 +44,15 @@ class Base:
             list_objs: list of instances who inherits of Base
         """
         list_dict = []
-        for obj in list_objs:
-            list_dict.append(obj.to_dictionary())
+        if list_objs:
+            for obj in list_objs:
+                list_dict.append(obj.to_dictionary())
 
-        list_json = cls.to_json_string(list_dict)
+            list_json = cls.to_json_string(list_dict)
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode="w") as file:
             if list_objs is None:
                 file.write("[]")
             else:
                 file.write(list_json)
+
