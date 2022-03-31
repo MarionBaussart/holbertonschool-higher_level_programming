@@ -52,4 +52,3 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode="w") as file:
             file.write(list_json)
-
