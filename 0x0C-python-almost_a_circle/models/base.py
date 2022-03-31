@@ -30,4 +30,7 @@ class Base:
             list_dictionaries: list of dictionaries
         Return: JSON string representation of list_dictionaries
         """
-        return json.dumps(list_dictionaries)
+        json_dict = "[]"
+        if list_dictionaries is not None or list_dictionaries is not []:
+            json_dict = json.dumps(list_dictionaries)
+        return json_dict
