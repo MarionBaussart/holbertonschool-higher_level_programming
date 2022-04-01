@@ -59,4 +59,6 @@ class Base:
             json_string: string representing a list of dictionaries
         Return: the list obj represented by json_string
         """
+        if json_string is None or json_string is []:
+            return []
         return json.loads(json_string)
