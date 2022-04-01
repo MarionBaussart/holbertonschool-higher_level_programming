@@ -51,3 +51,12 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode="w") as file:
             file.write(list_json)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Deserialize a JSON string to a python list obj
+        Args:
+            json_string: string representing a list of dictionaries
+        Return: the list obj represented by json_string
+        """
+        return json.loads(json_string)
