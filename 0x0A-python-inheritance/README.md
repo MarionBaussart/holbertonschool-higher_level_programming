@@ -77,3 +77,13 @@ Write a class Square that inherits from Rectangle (9-rectangle.py):
 Write a class Square that inherits from Rectangle (9-rectangle.py). (task based on 10-square.py).
 
 * print() should print, and str() should return, the square description: [Square] <width>/<height>
+
+## 11. Student to disk and reload
+Write a class Student that defines a student by: (based on 10-student.py)
+
+* Public method def reload_from_json(self, json): that replaces all attributes of the Student instance:
+    * You can assume json will always be a dictionary
+    * A dictionary key will be the public attribute name
+    * A dictionary value will be the value of the public attribute
+* You are not allowed to import any module
+Now, you have a simple implementation of a serialization and deserialization mechanism (concept of representation of an object to another format, without losing any information and allow us to rebuild an object based on this representation)
