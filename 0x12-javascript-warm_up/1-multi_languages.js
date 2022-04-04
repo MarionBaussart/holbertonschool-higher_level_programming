@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-script that prints “JavaScript is amazing”
+script that prints 3 lines
 */
 
 const firstLine = 'C is fun'; // create a constant var
