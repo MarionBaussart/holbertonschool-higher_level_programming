@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-script that returns the addition of 2 integers
+function that executes x times a function.
 */
 
 exports.callMeMoby = function (x, theFunction) {
