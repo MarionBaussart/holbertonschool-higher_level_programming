@@ -8,7 +8,7 @@ const fileSourceOne = process.argv[2];
 const fileSourceTwo = process.argv[3];
 const fileDestination = process.argv[4];
 
-fs.readFile(fileSourceOne, 'utf8', (err, data) => {
+fs.readFile(fileSourceOne, 'utf8', (err, dataOne) => {
   if (err) {
     console.error(err);
     return;
@@ -18,7 +18,7 @@ fs.readFile(fileSourceOne, 'utf8', (err, data) => {
       console.error(err);
       return;
     }
-    fs.writeFile(fileDestination, data + '\n' + dataTwo, function (err) {
+    fs.writeFile(fileDestination, dataOne + dataTwo, function (err) {
       if (err) {
         return console.log(err);
       }
