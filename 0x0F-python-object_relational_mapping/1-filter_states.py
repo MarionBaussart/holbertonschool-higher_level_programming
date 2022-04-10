@@ -6,21 +6,23 @@ from the database hbtn_0e_0_usa
 import MySQLdb
 import sys
 
-db = MySQLdb.connect(
-    host=("localhost"),
-    port=3306,
-    user=sys.argv[1],
-    passwd=sys.argv[2],
-    db=sys.argv[3]
-)
+if __name__ == "__main__":
 
-cursor = db.cursor()
-cursor.execute("SELECT * FROM states WHERE states.name \
-    LIKE 'N%' ORDER BY id ASC")
-query_rows = cursor.fetchall()
+    db = MySQLdb.connect(
+        host=("localhost"),
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
+    )
 
-for row in query_rows:
-    print(row)
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states WHERE states.name \
+        LIKE 'N%' ORDER BY id ASC")
+    query_rows = cursor.fetchall()
 
-cursor.close()
-db.close()
+    for row in query_rows:
+        print(row)
+
+    cursor.close()
+    db.close()
