@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-script that prints the first State object from the database hbtn_0e_6_usa
+script that prints the State object with the name passed as argument
+from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -19,7 +20,11 @@ Base.metadata.create_all(engine)
 
 session = Session(engine)
 
-state = session.query(State).order_by(State.id).all()
-print("{}: {}".format(state[0].id, state[0].name))
+if sys.argv[4] not in session.query(State).order_by(State.id).all():
+    print("Not found")
+
+for state in session.query(State).order_by(State.id).all():
+    if state.name == sys.argv[4]:
+        print("{}: {}".format(state.id, state.name))
 
 session.close()

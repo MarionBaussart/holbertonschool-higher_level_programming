@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-script that prints the first State object from the database hbtn_0e_6_usa
+script that lists all State objects that contain the letter a
+from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -19,7 +20,7 @@ Base.metadata.create_all(engine)
 
 session = Session(engine)
 
-state = session.query(State).order_by(State.id).all()
-print("{}: {}".format(state[0].id, state[0].name))
+for state_a in session.query(State).order_by(State.id).all():
+    print("{}: {}".format(state_a.id, state_a.name))
 
 session.close()

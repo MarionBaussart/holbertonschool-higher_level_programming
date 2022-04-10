@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that prints the first State object from the database hbtn_0e_6_usa
+script that changes the name of a State object from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -19,7 +19,9 @@ Base.metadata.create_all(engine)
 
 session = Session(engine)
 
-state = session.query(State).order_by(State.id).all()
-print("{}: {}".format(state[0].id, state[0].name))
-
+session.query(State).update(State).where(State.id == 2).values(name="New Mexico")
+"""
+session.query(State).filter(State.id == 2).update({State.name: "New Mexico"}, synchronize_session = False)
+session.rollback()
+"""
 session.close()
