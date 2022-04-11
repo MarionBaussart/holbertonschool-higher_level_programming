@@ -17,12 +17,12 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{:s}' \
+    ORDER BY id ASC".format(sys.argv[4]))
     query_rows = cursor.fetchall()
 
     for row in query_rows:
-        if (sys.argv[4] == row[1]):
-            print(row)
+        print(row)
 
     cursor.close()
     db.close()
