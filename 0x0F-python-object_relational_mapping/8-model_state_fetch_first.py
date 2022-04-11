@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     session = Session(engine)
 
-    state = session.query(State).order_by(State.id).all()
-    print("{}: {}".format(state[0].id, state[0].name))
+    state = session.query(State).first()
+    print("{}: {}".format(state.id, state.name))
 
     session.close()
