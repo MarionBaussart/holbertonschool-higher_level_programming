@@ -12,9 +12,9 @@ if __name__ == "__main__":
         q = sys.argv[1]
 
     req = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
-    response = req.json()
 
     try:
+        response = req.json()
         if response == {}:
             print("No result")
         else:
